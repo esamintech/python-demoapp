@@ -61,6 +61,7 @@ jobs:
           echo ${{ secrets.GITHUB_TOKEN }} | docker login $IMAGE_REG -u $GITHUB_ACTOR --password-stdin
           make push
 
+
       - name: 'Trigger AKS release pipeline'
         if: github.ref == 'refs/heads/master'
         uses: benc-uk/workflow-dispatch@v1
